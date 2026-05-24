@@ -1150,7 +1150,7 @@ with header_cols[0]:
             <div class="omni-wordmark" style="font-weight: bold;">OMNI</div>
         </div>
     </a>
-    """, unsafe_allow_html=True)
+    """, unsafe_allow_html == True)
     
 
 with header_cols[1]:
