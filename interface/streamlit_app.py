@@ -632,9 +632,9 @@ div[data-testid="stFileUploader"] section [data-testid="stFileUploaderDropzoneIn
 /* Style the native uploaded file card when a file is selected */
 [data-testid*="UploadedFile"],
 [data-testid*="FileUploaderFile"] {{
-    background: {T['surface2']} !important;
+      /*background: {T['surface2']} !important;
     /*background-color: {T['surface2']} !important;*/
-    background-color: red !important;
+    background-color: red !important;  */
     border: 1px solid {T['accent']} !important;
     border-radius: 12px !important;
     padding: 15px !important;
@@ -645,8 +645,8 @@ div[data-testid="stFileUploader"] section [data-testid="stFileUploaderDropzoneIn
 [data-testid*="UploadedFile"] *,
 [data-testid*="FileUploaderFile"] * {{
     color: {T['text']} !important;
-    background: transparent !important;
-    background-color: red !important;
+      /*background: transparent !important;
+    background-color: red !important;  */
    /* background-color: transparent !important; */
 }}
 
