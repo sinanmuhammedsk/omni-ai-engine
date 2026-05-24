@@ -629,17 +629,22 @@ div[data-testid="stFileUploader"] section [data-testid="stFileUploaderDropzoneIn
 
 
 /* Style the native uploaded file card when a file is selected */
-[data-testid="stUploadedFile"] {{
+[data-testid*="UploadedFile"],
+[data-testid*="FileUploaderFile"] {{
     background: {T['surface2']} !important;
+    background-color: {T['surface2']} !important;
     border: 1px solid {T['accent']} !important;
     border-radius: 12px !important;
     padding: 15px !important;
     box-shadow: 0 8px 30px rgba(52,211,153,0.1) !important;
-    color: {T['text']} !important;
 }}
 
-[data-testid="stUploadedFile"] * {{
+/* Force all text inside to respect the current theme text token */
+[data-testid*="UploadedFile"] *,
+[data-testid*="FileUploaderFile"] * {{
     color: {T['text']} !important;
+    background: transparent !important;
+    background-color: transparent !important;
 }}
 
 /* ── PROCEED BUTTON ── */
