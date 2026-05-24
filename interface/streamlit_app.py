@@ -157,7 +157,7 @@ def get_theme_tokens(mode: str) -> dict:
             "surface2":        "#FFFFFF",
             "border":          "#DDE3F0",
             "border_accent":   "#C5CEEA",
-            "text":            "#111827",
+            "text":            "#FFFFFF",
             "text_muted":      "#4B5A7A",
             "text_subtle":     "#9AA3BE",
             "accent":          "#4F46E5",
