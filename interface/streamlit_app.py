@@ -480,16 +480,11 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
     line-height: 1.15;
 }}
 
-
-.omni-hero-title {{
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    letter-spacing: -0.035em;
-    color: {T['text']};
-    margin-bottom: 10px;
-    line-height: 1.15;
-    width: 100%;
+.omni-hero-title span {{
+    background: linear-gradient(135deg, {T['accent']}, {T['accent2']});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }}
 
 .omni-hero-subtitle {{
