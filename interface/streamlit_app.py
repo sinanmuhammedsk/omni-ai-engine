@@ -1,7 +1,12 @@
+import sys
+import os
+
+# This tells Streamlit to look at the main folder so it can find the backend folder
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import streamlit as st
 import requests
 import time
-import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from sqlalchemy.orm import Session
