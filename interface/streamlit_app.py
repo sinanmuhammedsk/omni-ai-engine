@@ -6,14 +6,18 @@ import time
 # 1. This tells Streamlit to look at the main folder so it can find the backend folder
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# 2. START THE BACKEND SERVER IN THE BACKGROUND
-# This automatically spins up your FastAPI app when Streamlit deploys
+# 2. START THE BACKEND SERVER VIA UVICORN EXPLICITLY
 if "backend_started" not in os.environ:
     os.environ["backend_started"] = "true"
-    # Adjust this path if your main backend file is located elsewhere
-    backend_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "main.py")
-    subprocess.Popen([sys.executable, backend_path])
-    time.sleep(3) # Give the backend a few seconds to fully boot up
+    
+    # This fires up Uvicorn on localhost port 8000 pointing directly to your app instance
+    subprocess.Popen([
+        sys.executable, "-m", "uvicorn", 
+        "backend.main:app", 
+        "--host", "127.0.0.1", 
+        "--port", "8000"
+    ])
+    time.sleep(5) # Give Uvicorn a full 5 seconds to bind to the port completely
 
 import streamlit as st
 import requests
@@ -22,7 +26,6 @@ from langchain_groq import ChatGroq
 from sqlalchemy.orm import Session
 from backend.db.models import DocumentMetadata
 from backend.db.base import get_db
-
 # ─────────────────────────────────────────────────────────────────────────────
 # 0. ENVIRONMENT & PAGE CONFIG  (Must be FIRST Streamlit call)
 # ─────────────────────────────────────────────────────────────────────────────
