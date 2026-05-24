@@ -683,7 +683,8 @@ button[data-testid="baseButton-primary"]:active,
 /* ── SECONDARY BUTTONS ── */
 button[data-testid="baseButton-secondary"],
 .stButton > button[kind="secondary"] {{
-    background: {T['surface2']} !important;
+      /*background: {T['surface2']} !important;  */
+    background-color: red !important;
     color: {T['text']} !important;
     border: 1px solid {T['border']} !important;
     border-radius: 10px !important;
