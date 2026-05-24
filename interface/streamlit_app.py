@@ -482,6 +482,7 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
     width: 100%;
 }}
 
+
 .omni-hero-subtitle {{
     font-size: 0.92rem;
     color: {T['text_muted']};
