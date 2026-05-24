@@ -564,6 +564,7 @@ div[data-testid="stFileUploader"] section button,
 
 div[data-testid="stFileUploader"] section button:hover,
 [data-testid="stFileUploadDropzone"] button:hover {{
+    /*background-color: red !important;*/
     background-color: red !important;
     border-color: {T['accent']}66 !important;
     color: {T['accent']} !important;
@@ -632,7 +633,8 @@ div[data-testid="stFileUploader"] section [data-testid="stFileUploaderDropzoneIn
 [data-testid*="UploadedFile"],
 [data-testid*="FileUploaderFile"] {{
     background: {T['surface2']} !important;
-    background-color: {T['surface2']} !important;
+    /*background-color: {T['surface2']} !important;*/
+    background-color: red !important;
     border: 1px solid {T['accent']} !important;
     border-radius: 12px !important;
     padding: 15px !important;
@@ -644,7 +646,8 @@ div[data-testid="stFileUploader"] section [data-testid="stFileUploaderDropzoneIn
 [data-testid*="FileUploaderFile"] * {{
     color: {T['text']} !important;
     background: transparent !important;
-    background-color: transparent !important;
+    background-color: red !important;
+   /* background-color: transparent !important; */
 }}
 
 /* ── PROCEED BUTTON ── */
