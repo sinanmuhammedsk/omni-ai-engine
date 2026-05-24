@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # This automatically spins up your FastAPI app when Streamlit deploys
 # 2. START THE BACKEND SERVER VIA UVICORN EXPLICITLY
 if "backend_started" not in os.environ:
-os.environ["backend_started"] = "true"
+    os.environ["backend_started"] = "true"
     # Adjust this path if your main backend file is located elsewhere
     backend_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "main.py")
     subprocess.Popen([sys.executable, backend_path])
