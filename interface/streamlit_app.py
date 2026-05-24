@@ -346,7 +346,7 @@ h1, h2, h3, h4, h5, h6 {{
     transform: scale(1.08);
 }}
 
-.omni-logo-icon {{
+.omni--icon {{
     width: 32px;
     height: 32px;
     display: flex;
@@ -358,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {{
     position: relative;
 }}
 
-.omni-logo-icon svg {{
+.omni--icon svg {{
     width: 24px;
     height: 24px;
 }}
@@ -1115,7 +1115,7 @@ div[data-testid="stExpander"] .stRadio label {{
     border: 1px solid !important;
 }}
 
-/* ── CLICKABLE LOGO OVERLAY LAYER ── */
+/* ── CLICKABLE  OVERLAY LAYER ── */
 div.st-key-logo_home_btn {{
     position: absolute !important;
     z-index: 1005 !important;
@@ -1166,22 +1166,36 @@ if st.session_state.active_doc_id is not None:
 # 7. TOP BRANDING BAR  (always visible, native columns)
 # ─────────────────────────────────────────────────────────────────────────────
 header_cols = st.columns([2.8, 0.2])
-
 with header_cols[0]:
+    # We use a button hidden underneath the premium branding HTML layout
+    if st.button("home_nav_trigger", key="logo_home_btn", help="Return to Main Portal"):
+        # Reset the layout state variables completely to drop back to the main upload page
+        for k in ["pdf_uploaded", "pipeline_proceeded", "pdf_processed", 
+                  "active_doc_id", "active_doc_name", "messages"]:
+            st.session_state[k] = False if isinstance(st.session_state[k], bool) else (
+                [] if isinstance(st.session_state[k], list) else None
+            )
+        st.rerun()
+
+    # The visual mask overlay that matches your design system
     st.markdown(f"""
-    <div style="display: flex; align-items: center; gap: 12px; height: 36px;">
-        <div class="omni-logo-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L20.196 7V17L12 22L3.804 17V7L12 2Z"
-                      fill="{T['accent']}" fill-opacity="0.95"/>
-                <path d="M12 6L16.9 9V15L12 18L7.1 15V9L12 6Z"
-                      fill="{T['accent2']}" fill-opacity="0.4"/>
-                <circle cx="12" cy="12" r="2" fill="{T['text']}" fill-opacity="0.95"/>
-            </svg>
+    <div class="clickable-logo-wrapper">
+        <div style="display: flex; align-items: center; gap: 12px; height: 36px;">
+            <div class="omni-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L20.196 7V17L12 22L3.804 17V7L12 2Z"
+                          fill="{T['accent']}" fill-opacity="0.95"/>
+                    <path d="M12 6L16.9 9V15L12 18L7.1 15V9L12 6Z"
+                          fill="{T['accent2']}" fill-opacity="0.4"/>
+                    <circle cx="12" cy="12" r="2" fill="{T['text']}" fill-opacity="0.95"/>
+                </svg>
+            </div>
+            <div class="omni-wordmark">OMNI</div>
         </div>
-        <div class="omni-wordmark">OMNI</div>
     </div>
     """, unsafe_allow_html=True)
+
+
 
 with header_cols[1]:
     theme_icon = "☀️" if st.session_state.theme == "dark" else "🌙"
