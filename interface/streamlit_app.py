@@ -181,7 +181,7 @@ accent_svg = T['accent'].replace('#', '%23')
 # ─────────────────────────────────────────────────────────────────────────────
 # 5. CSS DESIGN SYSTEM INJECTION
 # ─────────────────────────────────────────────────────────────────────────────
-(f"""
+st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -1135,7 +1135,7 @@ if st.session_state.active_doc_id is not None:
 header_cols = st.columns([2.8, 0.2])
 
 with header_cols[0]:
-    (f"""
+    st.markdown(f"""
     <div style="display: flex; align-items: center; gap: 12px; height: 36px;">
         <div class="omni-logo-icon">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1149,15 +1149,6 @@ with header_cols[0]:
         <div class="omni-wordmark">OMNI</div>
     </div>
     """, unsafe_allow_html=True)
-
-with header_cols[1]:
-    theme_icon = "☀️" if st.session_state.theme == "dark" else "🌙"
-    if st.button(theme_icon, key="theme_toggle_btn", help="Toggle Visual Theme"):
-        st.session_state.theme = "light" if st.session_state.theme == "dark" else "dark"
-        st.session_state.theme_radio = "Dark Mode" if st.session_state.theme == "dark" else "Light Mode"
-        st.rerun()
-
-    
 
 with header_cols[1]:
     theme_icon = "☀️" if st.session_state.theme == "dark" else "🌙"
