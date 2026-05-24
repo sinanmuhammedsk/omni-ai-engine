@@ -564,7 +564,7 @@ div[data-testid="stFileUploader"] section button,
 
 div[data-testid="stFileUploader"] section button:hover,
 [data-testid="stFileUploadDropzone"] button:hover {{
-    background: {T['accent_glow']} !important;
+    background-color: red !important;
     border-color: {T['accent']}66 !important;
     color: {T['accent']} !important;
     transform: translateY(-1px) !important;
