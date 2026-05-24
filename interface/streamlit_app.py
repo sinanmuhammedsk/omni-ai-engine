@@ -181,7 +181,7 @@ accent_svg = T['accent'].replace('#', '%23')
 # ─────────────────────────────────────────────────────────────────────────────
 # 5. CSS DESIGN SYSTEM INJECTION
 # ─────────────────────────────────────────────────────────────────────────────
-st.markdown(f"""
+(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -1136,19 +1136,22 @@ header_cols = st.columns([2.8, 0.2])
 
 with header_cols[0]:
     st.markdown(f"""
-    <div style="display: flex; align-items: center; gap: 12px; height: 36px;">
-        <div class="omni-logo-icon">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L20.196 7V17L12 22L3.804 17V7L12 2Z"
-                      fill="{T['accent']}" fill-opacity="0.95"/>
-                <path d="M12 6L16.9 9V15L12 18L7.1 15V9L12 6Z"
-                      fill="{T['accent2']}" fill-opacity="0.4"/>
-                <circle cx="12" cy="12" r="2" fill="{T['text']}" fill-opacity="0.95"/>
-            </svg>
+    <a href="/" target="_self" style="text-decoration: none; color: inherit; display: inline-block;">
+        <div style="display: flex; align-items: center; gap: 12px; height: 36px; cursor: pointer;">
+            <div class="omni-logo-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L20.196 7V17L12 22L3.804 17V7L12 2Z"
+                          fill="{T['accent']}" fill-opacity="0.95"/>
+                    <path d="M12 6L16.9 9V15L12 18L7.1 15V9L12 6Z"
+                          fill="{T['accent2']}" fill-opacity="0.4"/>
+                    <circle cx="12" cy="12" r="2" fill="{T['text']}" fill-opacity="0.95"/>
+                </svg>
+            </div>
+            <div class="omni-wordmark" style="font-weight: bold;">OMNI</div>
         </div>
-        <div class="omni-wordmark">OMNI</div>
-    </div>
+    </a>
     """, unsafe_allow_html=True)
+    
 
 with header_cols[1]:
     theme_icon = "☀️" if st.session_state.theme == "dark" else "🌙"
