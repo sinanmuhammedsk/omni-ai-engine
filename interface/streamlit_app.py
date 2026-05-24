@@ -495,39 +495,6 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
     font-weight: 400;
     letter-spacing: 0.01em;
 }}
-/* ── CLICKABLE LOGO OVERLAY LAYER ── */
-div.st-key-logo_home_btn {
-    position: absolute !important;
-    z-index: 1005 !important;
-    width: 140px !important; /* Spans across the logo and OMNI wordmark */
-    height: 40px !important;
-}
-
-div.st-key-logo_home_btn button {
-    background: transparent !important;
-    border: none !important;
-    color: transparent !important;
-    width: 100% !important;
-    height: 100% !important;
-    cursor: pointer !important;
-    box-shadow: none !important;
-}
-
-div.st-key-logo_home_btn button:hover, 
-div.st-key-logo_home_btn button:focus, 
-div.st-key-logo_home_btn button:active {
-    background: transparent !important;
-    color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Ensure the wrapper elements let mouse interactions pass properly if needed */
-.clickable-logo-wrapper {
-    position: relative;
-    pointer-events: none; /* Passes hover feel down to our button trick */
-    user-select: none;
-}
 
 /* ── FILE UPLOADER NATIVE OVERRIDE ── */
 div[data-testid="stFileUploader"] {{
@@ -883,7 +850,6 @@ button[data-testid="baseButton-secondary"]:hover,
     gap: 12px;
     padding: 24px 0;
     overflow-y: auto;
-
 }}
 
 /* ── PANEL CARDS ── */
@@ -1149,6 +1115,39 @@ div[data-testid="stExpander"] .stRadio label {{
     border: 1px solid !important;
 }}
 
+/* ── CLICKABLE LOGO OVERLAY LAYER ── */
+div.st-key-logo_home_btn {{
+    position: absolute !important;
+    z-index: 1005 !important;
+    width: 140px !important;
+    height: 40px !important;
+}}
+
+div.st-key-logo_home_btn button {{
+    background: transparent !important;
+    border: none !important;
+    color: transparent !important;
+    width: 100% !important;
+    height: 100% !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+}}
+
+div.st-key-logo_home_btn button:hover, 
+div.st-key-logo_home_btn button:focus, 
+div.st-key-logo_home_btn button:active {{
+    background: transparent !important;
+    color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}}
+
+.clickable-logo-wrapper {{
+    position: relative;
+    pointer-events: none;
+    user-select: none;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -1181,35 +1180,6 @@ with header_cols[0]:
             </svg>
         </div>
         <div class="omni-wordmark">OMNI</div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with header_cols[0]:
-    # We use a button hidden underneath the premium branding HTML layout
-    if st.button("home_nav_trigger", key="logo_home_btn", help="Return to Main Portal"):
-        # Reset the layout state variables completely to drop back to the main upload page
-        for k in ["pdf_uploaded", "pipeline_proceeded", "pdf_processed", 
-                  "active_doc_id", "active_doc_name", "messages"]:
-            st.session_state[k] = False if isinstance(st.session_state[k], bool) else (
-                [] if isinstance(st.session_state[k], list) else None
-            )
-        st.rerun()
-
-    # The visual mask overlay that matches your design system
-    st.markdown(f"""
-    <div class="clickable-logo-wrapper">
-        <div style="display: flex; align-items: center; gap: 12px; height: 36px;">
-            <div class="omni-logo-icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L20.196 7V17L12 22L3.804 17V7L12 2Z"
-                          fill="{T['accent']}" fill-opacity="0.95"/>
-                    <path d="M12 6L16.9 9V15L12 18L7.1 15V9L12 6Z"
-                          fill="{T['accent2']}" fill-opacity="0.4"/>
-                    <circle cx="12" cy="12" r="2" fill="{T['text']}" fill-opacity="0.95"/>
-                </svg>
-            </div>
-            <div class="omni-wordmark">OMNI</div>
-        </div>
     </div>
     """, unsafe_allow_html=True)
 
