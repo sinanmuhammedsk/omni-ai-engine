@@ -127,14 +127,14 @@ def query_llm_stream(prompt: str):
 # 4. THEME TOKENS
 # ─────────────────────────────────────────────────────────────────────────────
 def get_theme_tokens(mode: str) -> dict:
-    if mode == "light":
+    if mode == "dark":
         return {
             "bg":              "#090D1A",
             "surface":         "#0F1629",
             "surface2":        "#141D35",
             "border":          "#1E2A45",
             "border_accent":   "#2D3A5C",
-            "text":            "#E8EDF7",
+            "text":            "#FFFFFF",
             "text_muted":      "#6B7BA4",
             "text_subtle":     "#404E72",
             "accent":          "#818CF8",
