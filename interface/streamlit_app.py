@@ -1349,7 +1349,7 @@ if not st.session_state.pipeline_proceeded:
                 Enterprise <span>Semantic</span><br>Intelligence System
             </h1>
             <p class="omni-hero-subtitle">
-                Automated parsing and analysis engine for CV portfolios.
+                Automated parsing and analysis engine for PDF documents
             </p>
             """, unsafe_allow_html=True)
 
