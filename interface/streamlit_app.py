@@ -470,17 +470,6 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
 }}
 
 /* ── INITIAL UPLOAD STATE ── */
-.omni-hero-title {{
-    font-size: 2rem;
-    font-weight: 800;
-    text-align: center;
-    letter-spacing: -0.035em;
-    color: {T['text']};
-    margin-bottom: 10px;
-    line-height: 1.15;
-}}
-
-
 .omni-hero-title {
     font-size: 2rem;
     font-weight: 800;
