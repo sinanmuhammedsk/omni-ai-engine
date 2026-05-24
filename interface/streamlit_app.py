@@ -481,7 +481,7 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
 }}
 
 
-.omni-hero-title {
+.omni-hero-title {{
     font-size: 2rem;
     font-weight: 800;
     text-align: center;
@@ -489,7 +489,6 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
     color: {T['text']};
     margin-bottom: 10px;
     line-height: 1.15;
-    padding-left: 1.5rem; /* Shifts the center weight slightly to the right to look perfect */
     width: 100%;
 }}
 
