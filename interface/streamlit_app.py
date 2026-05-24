@@ -50,7 +50,7 @@ _defaults = {
     "active_doc_id": None,
     "active_doc_name": None,
     "messages": [],
-    "theme": "light",          # "dark" | "light"
+    "theme": "dark",          # "dark" | "light"
     "theme_radio": "Light Mode",
     "dots_open": False,
     "sidebar_open": False,
@@ -134,7 +134,7 @@ def get_theme_tokens(mode: str) -> dict:
             "surface2":        "#141D35",
             "border":          "#1E2A45",
             "border_accent":   "#2D3A5C",
-            "text":            "#FFFFFF",
+            "text":            "#E8EDF7",
             "text_muted":      "#6B7BA4",
             "text_subtle":     "#404E72",
             "accent":          "#818CF8",
