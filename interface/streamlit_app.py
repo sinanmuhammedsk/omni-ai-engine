@@ -478,10 +478,20 @@ section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {{
     color: {T['text']};
     margin-bottom: 10px;
     line-height: 1.15;
+}}
+
+
+.omni-hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: -0.035em;
+    color: {T['text']};
+    margin-bottom: 10px;
+    line-height: 1.15;
     padding-left: 1.5rem; /* Shifts the center weight slightly to the right to look perfect */
     width: 100%;
 }}
-
 
 .omni-hero-subtitle {{
     font-size: 0.92rem;
